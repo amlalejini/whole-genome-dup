@@ -1,0 +1,4 @@
+[submodule "third-party/avida"]
+	path = third-party/avida
+	url = https://github.com/mmore500/avida.git
+	branch = whole-genome-duplication
