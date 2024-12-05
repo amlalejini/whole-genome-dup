@@ -1,0 +1,10 @@
+
+
+Changes from defaults
+
+```
+DIVIDE_INS_PROB 0.0
+DIVIDE_DEL_PROB 0.0
+BIRTH_METHOD 4
+OFFSPRING_SIZE_RANGE 1.0
+```
