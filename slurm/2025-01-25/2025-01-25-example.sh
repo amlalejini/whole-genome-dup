@@ -246,7 +246,7 @@ singularity --version
 singularity run docker://ghcr.io/devosoft/avida@sha256:7c9e83ed11bd3d43f6effd7412d75d83cd23a8fe14e304536a07e5f26f5f5102 -v
 
 echo "run Avida via singularity container"
-singularity run docker://ghcr.io/devosoft/sha256:7c9e83ed11bd3d43f6effd7412d75d83cd23a8fe14e304536a07e5f26f5f5102 -s "\${task}"
+singularity run docker://ghcr.io/devosoft/avida@sha256:7c9e83ed11bd3d43f6effd7412d75d83cd23a8fe14e304536a07e5f26f5f5102 -s "\${task}"
 
 ls
 ls *
