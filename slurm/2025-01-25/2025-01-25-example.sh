@@ -231,6 +231,16 @@ echo "TREATMENT \${TREATMENT}"
 curl -sSL https://raw.githubusercontent.com/mmore500/whole-genome-dup/c76e851a7ce902b7174f9996798cdad39d6971e6/treatments/2025-01-25-\${TREATMENT}.sh | sh
 ls
 
+if [ -z "${CI}" ]; then
+  echo "not in CI."
+else
+  echo "CI is detected, truncating run"
+  echo >> "events.cfg"
+  echo "u 100 Exit" >> "events.cfg"
+  tail "events.cfg"
+fi
+
+
 echo "get ready to run Avida via singularity container"
 singularity --version
 singularity run docker://ghcr.io/devosoft/avida@sha256:5daa3c1fdf82c51a56e478116640ff3845bb756764fc5e74c1cc4418e718250a -v
