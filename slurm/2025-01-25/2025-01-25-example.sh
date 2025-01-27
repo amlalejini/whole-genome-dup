@@ -258,6 +258,7 @@ cat data/average.dat | grep -v '^$' | python3.10 -m joinem a=result+ext=.csv \
   --output-filetype csv \
   --read-kwarg 'separator=" "' \
   --read-kwarg 'has_header=False' \
+  --read-kwarg 'infer_schema=False' \
   --read-kwarg 'comment_prefix="#"' \
   --with-column "pl.lit('${TREATMENT}').alias('Treatment')" \
   --with-column "pl.lit('${SEED}').alias('Seed')"
@@ -315,7 +316,7 @@ popd
 echo "   - join result"
 ls -1 "${BATCHDIR}"/__*/**/a=result+* \
     | tee /dev/stderr \
-    | python3.10 -m joinem --progress \
+    | python3.10 -m joinem --progress --read-kwarg 'infer_schema=False' \
         "${BATCHDIR_JOBRESULT}/a=result+date=${JOBDATE}+job=${JOBNAME}+ext=.csv"
 ls -l "${BATCHDIR_JOBRESULT}"
 du -h "${BATCHDIR_JOBRESULT}"
