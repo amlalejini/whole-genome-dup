@@ -233,10 +233,10 @@ ls
 
 echo "get ready to run Avida via singularity container"
 singularity --version
-singularity exec docker://ghcr.io/devosoft/acida@sha256:5daa3c1fdf82c51a56e478116640ff3845bb756764fc5e74c1cc4418e718250a --version
+singularity run docker://ghcr.io/devosoft/avida@sha256:5daa3c1fdf82c51a56e478116640ff3845bb756764fc5e74c1cc4418e718250a -v
 
 echo "run Avida via singularity container"
-singularity exec docker://ghcr.io/devosoft/avida@sha256:5daa3c1fdf82c51a56e478116640ff3845bb756764fc5e74c1cc4418e718250a
+singularity run docker://ghcr.io/devosoft/avida@sha256:5daa3c1fdf82c51a56e478116640ff3845bb756764fc5e74c1cc4418e718250a
 
 ls
 ls *
