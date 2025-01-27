@@ -251,8 +251,8 @@ singularity run docker://ghcr.io/devosoft/avida@sha256:5daa3c1fdf82c51a56e478116
 ls
 ls *
 
-python3 -m joinem --version
-cat data/average.dat | python3 -m joinem a=result+ext=.csv \
+python3.10 -m joinem --version
+cat data/average.dat | grep -v '^$' | python3.10 -m joinem a=result+ext=.csv \
   --stdin \
   --input-filetype csv \
   --output-filetype csv \
