@@ -257,6 +257,7 @@ cat data/average.dat | grep -v '^$' | python3.10 -m joinem a=result+ext=.csv \
   --input-filetype csv \
   --output-filetype csv \
   --read-kwarg 'separator=" "' \
+  --read-kwarg 'has_header=False' \
   --read-kwarg 'comment_prefix="#"' \
   --with-column "pl.lit('${TREATMENT}').alias('Treatment')" \
   --with-column "pl.lit('${SEED}').alias('Seed')"
