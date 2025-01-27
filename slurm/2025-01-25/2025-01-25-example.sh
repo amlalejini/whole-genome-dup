@@ -119,7 +119,7 @@ python3.10 -m uv pip freeze
 
 echo "sbatch preamble ========================================================="
 JOB_PREAMBLE=$(cat << EOF
-set -e
+set -euo pipefail
 shopt -s globstar
 
 # adapted from https://unix.stackexchange.com/a/504829
