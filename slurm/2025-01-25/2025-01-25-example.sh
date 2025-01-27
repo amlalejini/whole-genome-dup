@@ -251,6 +251,16 @@ singularity run docker://ghcr.io/devosoft/avida@sha256:5daa3c1fdf82c51a56e478116
 ls
 ls *
 
+python3 -m joinem --version
+cat data/average.dat | python3 -m joinem a=result+ext=.csv \
+  --stdin \
+  --input-filetype csv \
+  --output-filetype csv \
+  --read-kwarg 'separator=" "' \
+  --read-kwarg 'comment_prefix="#"' \
+  --with-column "pl.lit('${TREATMENT}').alias('Treatment')" \
+  --with-column "pl.lit('${SEED}').alias('Seed')"
+
 echo "finalization telemetry -------------------------------------- \${SECONDS}"
 ls -l \${JOBDIR}
 du -h \${JOBDIR}
