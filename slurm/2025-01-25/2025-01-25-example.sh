@@ -220,8 +220,9 @@ echo "do work ----------------------------------------------------- \${SECONDS}"
 cd "\${JOBDIR}"
 pwd
 
-echo "get config for array task \${SLURM_ARRAY_TASK_ID}"
-if (( SLURM_ARRAY_TASK_ID % 2 == 0 )); then
+task=\${SLURM_ARRAY_TASK_ID:-0}
+echo "get config for array task \${task}"
+if (( task % 2 == 0 )); then
     export TREATMENT="flipped"
 else
     export TREATMENT="fixed"
